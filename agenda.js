@@ -79,8 +79,8 @@ formulario.addEventListener("submit", (evento) => {
   const consultas = carregar();
 
   if (horarioOcupado(consultas, nova)) {
-    mensagem.textContent = "erro";
-    formulario.reset();
+    mensagem.textContent = `Horário ocupado! A médica(o) ${nova.profissional} já possui agendamento às ${nova.hora}.`;
+    // formulario.reset(); -> Removido para manter os dados preenchidos
     return;
   }
 
